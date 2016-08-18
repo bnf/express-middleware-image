@@ -75,7 +75,7 @@ var media = function(opts) {
 				// file is fresh, no need to download/resize etc.
 				if (diffUnix < cacheTTL) {
 					res.setHeader('X-Hit-Cache', '1');
-					send(req, cachedFile).maxage(ttl || 0).pipe(res);
+					send(req, cachedFile, {maxAge: ttl || 0}).pipe(res);
 					return resume(false);
 				}
 			} catch (err) {
@@ -98,7 +98,7 @@ var media = function(opts) {
 				}
 
 				res.setHeader('X-Hit-Cache', '0');
-				send(req, cachedFile).maxage(ttl || 0).pipe(res);
+				send(req, cachedFile, {maxAge: ttl || 0}).pipe(res);
 
 				return resume(false);
 			}
