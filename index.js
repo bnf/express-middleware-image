@@ -123,7 +123,7 @@ var _parseOptions = function (options) {
 	rootDir  = options.root
 	cacheDir = options.cache
 
-	console.log(cacheDir, options);
+//	console.log(cacheDir, options);
 
 	if(!'root' in options || options.root == '' || !fs.existsSync(options.root)){
 		throw new Error('root parameter is not defined, empty or not founds');
