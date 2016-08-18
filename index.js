@@ -191,7 +191,7 @@ var _generate = function (opt, callback) {
 			imOptions.width = value;
 			imOptions.height = value;
 
-			im.crop(imOptions, function(err, stdout, stderr){
+			return im.crop(imOptions, function(err, stdout, stderr){
 				callback(err);
 			});
 
@@ -215,7 +215,7 @@ var _generate = function (opt, callback) {
 			imOptions.height = parseInt(arrProp[1])
 			if(isNaN(imOptions.height)) return callback('Height value is not valid');
 
-			im.crop(imOptions, function(err, stdout, stderr){
+			return im.crop(imOptions, function(err, stdout, stderr){
 				callback(err);
 			});
 
