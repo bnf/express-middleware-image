@@ -150,7 +150,7 @@ var _generate = function (opt, callback) {
 	var src = opt.src
 		, dst = opt.dst
 
-	// Trouver les dimensions de l'image source
+	// Retrieve image dimensons
 	im.identify(['-format', '%wx%h', src], function(err, dimension){
 
 		if (err) callback(err);
